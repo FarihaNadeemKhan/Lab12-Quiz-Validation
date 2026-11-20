@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Marks Validation</title>
+</head>
+<body>
+    <h2>Quiz Marks Validator</h2>
+
+    <form id="quizForm">
+        <label>Enter quiz marks (0-10):</label>
+        <input type="number" id="marks" required>
+        <button type="submit">Check Marks</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("quizForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                let marks = Number(document.getElementById("marks").value);
+                let result = document.getElementById("result");
+
+                // Intentionally flawed baseline condition
+                if (marks >= 0 && marks < 10) {
+                    result.textContent = "Valid marks!";
+                } else {
+                    result.textContent = "Invalid marks! Enter 0 to 10.";
+                }
+            });
+    </script>
+</body>
+</html>
