@@ -23,10 +23,10 @@
                 let result = document.getElementById("result");
 
                 // Intentionally flawed baseline condition
-                if (marks >= 0 && marks < 10) {
+                if (Number.isInteger(marks) && marks >= 0 && marks <= 10) {
                     result.textContent = "Valid marks!";
                 } else {
-                    result.textContent = "Invalid marks! Enter 0 to 10.";
+                    result.textContent = "Invalid marks! Enter a whole number between 0 and 10.";
                 }
             });
     </script>
